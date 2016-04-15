@@ -45,7 +45,7 @@ class PostgresDatabase(Database):
     CREATE_FINGERPRINTS_TABLE = """
         CREATE TABLE IF NOT EXISTS %s (
              %s bytea NOT NULL,
-             %s uuid NOT NULL,
+             %s serial NOT NULL,
              %s int NOT NULL,
              CONSTRAINT comp_key UNIQUE (%s, %s, %s),
              FOREIGN KEY (%s) REFERENCES %s(%s)
@@ -82,7 +82,7 @@ class PostgresDatabase(Database):
     # Creates the table that stores song information.
     CREATE_SONGS_TABLE = """
         CREATE TABLE IF NOT EXISTS %s (
-            %s uuid DEFAULT uuid_generate_v4() NOT NULL,
+            %s serial NOT NULL,
             %s varchar(250) NOT NULL,
             %s boolean default FALSE,
             PRIMARY KEY (%s),
