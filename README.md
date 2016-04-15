@@ -28,6 +28,8 @@ Or, if you would like to use postgres for your database:
 	Enter password: **********
 	psql> CREATE DATABASE IF NOT EXISTS dejavu;
 
+and change the config path in example.py:9 to `dejavu-postgresql.cnf.SAMPLE`.
+
 Now you're ready to start fingerprinting your audio collection! 
 
 ## Quickstart
