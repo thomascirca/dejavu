@@ -1,10 +1,15 @@
 from __future__ import absolute_import
 from itertools import izip_longest
 import Queue
+import sys
 
-import MySQLdb as mysql
+try:
+    import MySQLdb as mysql
+except ImportError as err:
+    print "Module not installed", err
+    sys.exit(1)
+
 from MySQLdb.cursors import DictCursor
-
 from dejavu.database import Database
 
 
